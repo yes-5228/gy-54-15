@@ -8,3 +8,4 @@ class Config:
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CORS_ORIGINS = os.getenv("CORS_ORIGINS", "*").split(",")
+    SEED_DEMO_DATA = os.getenv("SEED_DEMO_DATA", "true").lower() in ("true", "1", "yes")

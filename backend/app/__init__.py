@@ -17,6 +17,7 @@ def create_app(config_class=Config):
 
     with app.app_context():
         db.create_all()
-        seed_demo_data()
+        if app.config.get("SEED_DEMO_DATA"):
+            seed_demo_data()
 
     return app
